@@ -1,0 +1,31 @@
+{% extends 'header.html' %}
+
+
+{% block content %}
+<div class="container">
+
+
+    <div class="row justify-content-center m-2">
+
+
+
+
+    <div class="col-md-4">
+        <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+        <div class="card m-3 p-2" style="width: 18rem; height: 33rem; box-shadow: 4px 4px #c291fa; border-radius: 25px 15px;">
+            <img src="{{product.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 style="font-size: 17px;" class="card-title mt-1">{{ product.name }}</h4>
+                <h3 style="color: rgb(16, 52, 107)" class="card-subtitle mt-1">{{ product.price }}</h3>
+                <hr>
+                <p style="font-size: 15px;" class="card-text mt-1">Description: {{ product.description }}</p>
+                <a href="{% url 'delete-product' product.id %}" class="btn btn-danger m-1"> Delete </a>
+                <a href="{% url 'update-product' product.id %}" class="btn btn-primary m-1"> Update </a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+{% endblock %}
